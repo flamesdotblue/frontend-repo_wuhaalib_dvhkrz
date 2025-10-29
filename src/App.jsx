@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[#0a0e27] text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <Features />
+        {/* Placeholder sections for anchors */}
+        <section id="technology" className="bg-[#0a0e27] py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-semibold">Powered by Advanced AI</h2>
+            <p className="mt-3 text-gray-400 max-w-2xl">Smart models, technical indicators, and a scoring system designed to capture high-probability moves.</p>
+          </div>
+        </section>
+        <section id="pricing" className="bg-[#0a0e27] py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-semibold">Pricing</h2>
+            <p className="mt-3 text-gray-400">Starter (Free), Professional (₹999/mo), Premium (₹2,499/mo). Choose what suits you—upgrade anytime.</p>
+          </div>
+        </section>
+        <section id="about" className="bg-[#0a0e27] py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-semibold">About ZODIC</h2>
+            <p className="mt-3 text-gray-400 max-w-3xl">ZODIC is an AI-powered trading platform focused on automation, risk management, and performance analytics to help you trade confidently.</p>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
